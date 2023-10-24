@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+A = np.array([[1, 1, 1],
+              [4, 2, 1],
+              [9, 3, 1]])
+
+b = np.array([2, 3, 1])
+
+x = np.linalg.solve(A, b)
+a, b, c = x
+print("Løsning:")
+print("a =", a)
+print("b =", b)
+print("c =", c)
+
+def f(x,a,b,c):
+    return x**2*a + x*b + c
+
+x = np.linspace(0, 3, 1000)
+y = f(x,a,b,c)
+plt.plot([1, 2, 3], [2, 3, 1], 'o')
+plt.plot(x, y)
+plt.show()

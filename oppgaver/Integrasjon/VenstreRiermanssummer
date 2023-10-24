@@ -1,0 +1,16 @@
+import numpy as np
+
+def f(x):
+    return np.sin(x)
+
+a = 0
+b = np.pi
+n = 100000
+bredde = (b-a)/n
+
+integral = 0
+for i in range(n):
+    x = a + i*bredde
+    integral += f(x)*bredde
+
+print(integral)

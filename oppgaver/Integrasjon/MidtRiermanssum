@@ -1,0 +1,16 @@
+import numpy as np
+
+def f(x):
+    return 1/(np.sqrt(2*np.pi))*np.exp(-x**2/2)
+
+a = 0
+b = 1
+n = 10000000
+bredde = (b-a)/n
+
+integral = 0
+for i in range(n):
+    x_mid = a + (i+0.5)*bredde # midpoint of the subinterval
+    integral += f(x_mid)*bredde
+
+print(integral)
