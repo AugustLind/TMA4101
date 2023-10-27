@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+T=5
+N=30
+h=T/N
+t=np.linspace(0,T,N+1)
+
+x=np.zeros(N+1)
+x[0]= 1/10
+y = np.zeros(N+1)
+y[0] = 1/10
+
+def f(x):
+    return 2 - (19/10)*np.exp(-x)
+
+z = np.linspace(0,T,N)
+
+
+for i in range(N):
+    #Eulers eksplisitte metode
+    x[i+1] = x[i] + h*(2-x[i])
+    #Trapesmetoden
+    y[i+1] = y[i] + (h/2)*(2 - y[i] + 2 - x[i+1])
+
+plt.plot(t,x)
+plt.plot(t,y)
+plt.plot(z,f(z))
+plt.legend(["Eulers eksplisitte metode", "Trapesmetoden","Eksakt løsning"])
+plt.grid()
+plt.show()
+

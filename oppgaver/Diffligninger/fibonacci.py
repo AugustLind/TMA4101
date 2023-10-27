@@ -8,8 +8,4 @@ def fibonacci(tall):
         a = b
         b = c
     print(c)
-
-
-
-
 fibonacci(8)
