@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+T=5
+N=100
+h=T/N
+t=np.linspace(0,T,N+1)
+
+v=np.zeros(N+1)
+v[0]=0
+
+def f(v):
+    return 1 - v**2
+
+for i in range(N):
+    v[i+1] = v[i] + (h/2) * (f(v[i]) + f(v[i] + h * f(v[i])))
+
+plt.plot(t,v)
+plt.show()
+

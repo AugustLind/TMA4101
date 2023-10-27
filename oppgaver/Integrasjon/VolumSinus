@@ -1,0 +1,20 @@
+import numpy as np
+#volum av sinusfunksjonen mellom 0 og pi, bruker trapesmetoden
+
+def f(x):
+    return np.sin(x)
+
+a = 0
+b = np.pi
+n = 10000
+h = (b-a)/n
+integral = 0
+
+for i in range(n):
+    x0 = a + i*h
+    x1 = a + (i+1)*h
+    integral += (f(x0)**2 + f(x1)**2)*h/2
+    
+volum = integral*np.pi
+
+print(volum)
