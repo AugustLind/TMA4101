@@ -1,0 +1,36 @@
+import numpy as np
+import math as m
+
+m = 75
+g = 9.8214675 
+h = 5
+
+arbeid = m*g*h
+
+print(f"Arbeidet på hoppet var {arbeid:.2f} J")
+
+#newtons gravitajonslov
+
+G = 6.67e-11
+m1 = 5.97e24
+r = 42e3 + 6371e3
+
+F = (G*m*m1/r**2)*r
+print("Arbeidet i Newtons gravitasjonslov er", F, "J")
+
+#Beregne tyngdeakselerasjonen
+
+a = G*m1/(r**2)
+
+print("Akselerasjonen er", a, "m/s^2")
+
+#Beregne arbeidet som stempelet gjør på omgivelsene
+
+P1 = 10.0 
+V1 = 2.0   
+V2 = 4.0   
+
+arbeid = -P1 * V1 * m.log(V2 / V1)
+
+print(f"Arbeidet stempelet gjør på omgivelsene: {arbeid:.2f} Joule")
+

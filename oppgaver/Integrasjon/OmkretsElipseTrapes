@@ -1,0 +1,20 @@
+import numpy as np
+
+
+def elipse(x,r1,r2):
+    return np.sqrt(r1**2-r1**2*(x**2/r2**2))
+
+r1 = 2
+r2 = 1
+a = -1
+b = 1  
+n = 100000
+bredde = (b-a)/n
+integral = 0
+
+for i in range(n):
+    x0 = a + i*bredde
+    x1 = a + (i+1)*bredde
+    integral += np.sqrt(1+((elipse(x0,r1,r2)+elipse(x1,r1,r2))*bredde/2))
+
+print(integral)

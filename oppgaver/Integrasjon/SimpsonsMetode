@@ -1,7 +1,7 @@
 import numpy as np
 
 def f(x):
-    return np.exp(-x/2)
+    return np.exp(-x**2/2)
 
 def simpsonsMetode(f,a,b,n):
     #f er funksjonen vi skal integrere
